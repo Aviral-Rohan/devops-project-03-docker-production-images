@@ -13,7 +13,7 @@ MENU = [
 
 @app.get("/health")
 def health():
-    return jsonify(status="ok")
+    return jsonify(status="ok", service="api")
 
 
 @app.get("/menu")
