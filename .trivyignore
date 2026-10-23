@@ -1,0 +1,7 @@
+# Accepted risks for Trivy. Every entry needs: an owner, a reason, a tracking ticket and an expiry date.
+# Details: docs/accepted-risks.md
+# Format: <vulnerability id> exp:<YYYY-MM-DD>   (Trivy reports it again after the expiry date)
+
+# gunicorn 21.2.0 (api/requirements.txt), owner: Neha Kapoor (Backend), ticket OPS-104
+CVE-2024-1135 exp:2026-11-22
+CVE-2024-6827 exp:2026-11-22

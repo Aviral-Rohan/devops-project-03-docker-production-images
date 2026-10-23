@@ -8,6 +8,9 @@ RUN npm ci --omit=dev && npm cache clean --force
 
 # ---------- Stage 2: runtime ----------
 FROM node:22-trixie-slim
+# The app runs with "node server.js": remove package managers (and their bundled CVEs) from the final image
+RUN rm -rf /usr/local/lib/node_modules/npm /usr/local/lib/node_modules/corepack \
+    /usr/local/bin/npm /usr/local/bin/npx /usr/local/bin/corepack
 ENV NODE_ENV=production
 WORKDIR /app
 COPY --from=deps --chown=node:node /app/node_modules ./node_modules
